@@ -697,21 +697,20 @@ class SeeAllPage(Screen):
                 installed_tools.append(i)
     pass
 
-screen_manager = ScreenManager()
-screen_manager.add_widget(WelcomePage(name='welcome'))
-screen_manager.add_widget(ToolsPage(name='tools'))
-screen_manager.add_widget(HowTo(name='howto'))
-screen_manager.add_widget(About(name='about'))
-screen_manager.add_widget(Terms(name='terms'))
-screen_manager.add_widget(BluetoothWifiPage(name='bw'))
-screen_manager.add_widget(CanPage(name='can'))
-screen_manager.add_widget(SDRPage(name='sdr'))
-screen_manager.add_widget(MiscellaneousPage(name='miscellaneous'))
-screen_manager.add_widget(SeeAllPage(name='seeall'))
-
 class AutoPenApp(App):
     def build(self):
         title = 'AutoPen'
+        screen_manager = ScreenManager()
+        screen_manager.add_widget(WelcomePage(name='welcome'))
+        screen_manager.add_widget(ToolsPage(name='tools'))
+        screen_manager.add_widget(HowTo(name='howto'))
+        screen_manager.add_widget(About(name='about'))
+        screen_manager.add_widget(Terms(name='terms'))
+        screen_manager.add_widget(BluetoothWifiPage(name='bw'))
+        screen_manager.add_widget(CanPage(name='can'))
+        screen_manager.add_widget(SDRPage(name='sdr'))
+        screen_manager.add_widget(MiscellaneousPage(name='miscellaneous'))
+        screen_manager.add_widget(SeeAllPage(name='seeall'))
         return screen_manager
 
 if __name__ == "__main__":
