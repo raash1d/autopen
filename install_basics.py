@@ -17,58 +17,58 @@ distro = general_use.check_distribution()
 pack_man = general_use.package_tool(distro)
 
 def install_python(pack_man):
-	'''
-	This function installs or updates Python 3 depending on whether it is already on the system or not
-	'''
+    '''
+    This function installs or updates Python 3 depending on whether it is already on the system or not
+    '''
 
-	print ('Installing/Updating Python 3...')
+    print ('Installing/Updating Python 3...')
 
-	p_rc = dependencies.commandline_install(pack_man, "python3")
-	if p_rc != 0:
-		print ('INSTALLATION FAILED: Could not install Python 3')
-		print ("ERROR CODE:", p_rc)
-	else:
-		print ('INSTALLATION SUCCESSFUL: Python 3 successfully installed')
+    p_rc = dependencies.commandline_install(pack_man, "python3")
+    if p_rc != 0:
+        print ('INSTALLATION FAILED: Could not install Python 3')
+        print ("ERROR CODE:", p_rc)
+    else:
+        print ('INSTALLATION SUCCESSFUL: Python 3 successfully installed')
 
 def update_git(pack_man):
-	'''
-		This function installs or updates git depending on whether it is already on the system or not
-	'''
+    '''
+        This function installs or updates git depending on whether it is already on the system or not
+    '''
 
-	print('Installing git...')
-	g_rc = dependencies.commandline_install(pack_man, "git")
+    print('Installing git...')
+    g_rc = dependencies.commandline_install(pack_man, "git")
 
-	if g_rc != 0:
-		print ("INSTALLATION FAILED: Could not install git. This is needed to install some of the tools")
-		print ("ERROR CODE:", g_rc)
-	else:
-		print ("INSTALLATION SUCCESSFUL: Git successfully installed")
+    if g_rc != 0:
+        print ("INSTALLATION FAILED: Could not install git. This is needed to install some of the tools")
+        print ("ERROR CODE:", g_rc)
+    else:
+        print ("INSTALLATION SUCCESSFUL: Git successfully installed")
 
 def install_curl(pack_man):
-	'''
-		This function installs curl
-	'''
+    '''
+        This function installs curl
+    '''
 
-	print ('Installing curl...')
-	c_rc = dependencies.commandline_install(pack_man, 'curl')
-	if c_rc != 0:
-		print ('INSTALLATION FAILED: Could not install curl. This is needed to install some of the tools')
-		print ('ERROR CODE:', c_rc)
-	else:
-		print ('INSTALLATION SUCCESSFUL: curl successfully installed')
+    print ('Installing curl...')
+    c_rc = dependencies.commandline_install(pack_man, 'curl')
+    if c_rc != 0:
+        print ('INSTALLATION FAILED: Could not install curl. This is needed to install some of the tools')
+        print ('ERROR CODE:', c_rc)
+    else:
+        print ('INSTALLATION SUCCESSFUL: curl successfully installed')
 
 def install_pip(pack_man):
-	'''
-		This function installs pip3
-	'''
+    '''
+        This function installs pip3
+    '''
 
 
-	pip_rc = dependencies.commandline_install(pack_man, 'python3-pip') 
-	if pip_rc != 0:
-		print ('INSTALLATION FAILED: Failed to install pip. This is needed to install some dependencies for tools')
-		print ('ERROR CODE:', pip_rc)
-	else:
-		print ('INSTALLATION COMPLETE: Successfully installed pip')	
+    pip_rc = dependencies.commandline_install(pack_man, 'python3-pip')
+    if pip_rc != 0:
+        print ('INSTALLATION FAILED: Failed to install pip. This is needed to install some dependencies for tools')
+        print ('ERROR CODE:', pip_rc)
+    else:
+        print ('INSTALLATION COMPLETE: Successfully installed pip')
 
 
 install_python(pack_man)
