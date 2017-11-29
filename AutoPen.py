@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 
 import argparse
+import sys
 
 parser = argparse.ArgumentParser(description='''Autopen is an open-source
                                  toolkit designed to assist security analysts,
@@ -15,27 +16,28 @@ parser.add_argument('-g', '--gui', action='store_true', help='launch as GUI')
 
 args = parser.parse_args()
 
-# if args.gui:
-import kivy
-kivy.require('1.9.0')
+if args.gui:
+    sys.argv[1:] = []
+    import kivy
+    kivy.require('1.9.0')
 
-from kivy.app import App
-from kivy.uix.image import Image
-from kivy.uix.button import Button
-from kivy.uix.label import Label
-from kivy.uix.floatlayout import FloatLayout
-from kivy.uix.boxlayout import BoxLayout
-from kivy.uix.gridlayout import GridLayout
-from kivy.lang import Builder
-from kivy.uix.screenmanager import ScreenManager, Screen
-from kivy.uix.scrollview import ScrollView
-from kivy.properties import StringProperty
-from kivy.uix.textinput import TextInput
-from kivy.uix.popup import Popup
-from kivy.uix.togglebutton import ToggleButton
-from kivy.uix.checkbox import CheckBox
-from kivy.uix.widget import Widget
-from kivy.properties import OptionProperty
+    from kivy.app import App
+    from kivy.uix.image import Image
+    from kivy.uix.button import Button
+    from kivy.uix.label import Label
+    from kivy.uix.floatlayout import FloatLayout
+    from kivy.uix.boxlayout import BoxLayout
+    from kivy.uix.gridlayout import GridLayout
+    from kivy.lang import Builder
+    from kivy.uix.screenmanager import ScreenManager, Screen
+    from kivy.uix.scrollview import ScrollView
+    from kivy.properties import StringProperty
+    from kivy.uix.textinput import TextInput
+    from kivy.uix.popup import Popup
+    from kivy.uix.togglebutton import ToggleButton
+    from kivy.uix.checkbox import CheckBox
+    from kivy.uix.widget import Widget
+    from kivy.properties import OptionProperty
 
 #import install_basics
 import install
