@@ -11,20 +11,10 @@ parser = argparse.ArgumentParser(description='''Autopen is an open-source
                                  help the user in getting to know what tools
                                  are at their disposal, and teach them how to
                                  use them.''')
-parser.add_argument('-g', '--gui', action='store_true', help='launch as GUI')
-
 args = parser.parse_args()
 
-# graphical user interface
-if args.gui:
-    import autopengui
-# command-line interface
-else:
-    import autopencli
+import autopencli
 
 if __name__ == "__main__":
-    if args.gui:
-        autopengui.AutoPenApp().run()
-    else:
-        autopencli.AutoPenCli().run()
+    autopencli.AutoPenCli().run()
 
